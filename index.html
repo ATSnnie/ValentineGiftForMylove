@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: cusiva;
+            src: url("fonts/Dancing_Script/static/DancingScript-Bold.ttf");
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: cusiva;
+        }
+        section{
+            border: black 10px solid;
+            border-radius: 25px;
+            padding: 40px;
+        }
+        body{
+            display: flex;
+            height: 102vh;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        p{
+            font-size: x-large;
+            font-weight: bold;
+        }
+        img{
+            width: 500px;
+            height: 500px;
+        }
+        button{
+            background: none;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <p>Hi my love, i really wish i could do more than this</p><br>
+        <p>I wish I could take you on a nice place for dinner,</p>
+        <p>I wish I could give you chocolates and lots of kisses,</p>
+        <p>I wish I could hold you close at night.</p>
+        <p>One day it might be possible, but for now all I can do is say:</p><br>
+        <p>I love you Kelsey ♥</p><br>
+        <b>Click to eat</b>
+        <div id="secreteer">
+            <button  onclick="eat()" id="btn"><img id='chocolate' src="img/chocolatebox.png" alt=""></button>
+            <div id="secret" hidden= true>
+                <p>I wish you could eat me too...</p>
+                <p>I want to suck you dry and feel your warth inside me</p>
+                <img src="img/kiss.gif" alt="" style="width: auto; height: 300px;">
+            </div>
+        </div>
+    </section>
+    <script>
+        var eaten = 0;
+        function eat (){
+            eaten++;
+            if( eaten < 5){
+                var pic = document.getElementById('chocolate');
+                pic.src = `img/chocolatebox${eaten}.png`
+            }else if(eaten > 4){
+                document.getElementById('btn').hidden = true
+                document.getElementById('secret').hidden = false
+            }
+        }
+    </script>
+</body>
+</html>
